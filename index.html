@@ -1,25 +1,30 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>True or False Quiz</title>
+    <title>Multiple choice Quiz</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <div id="frame001">
-        <div id="font001">
-            <h2>True Or False Quiz</h2><text>Question: <text id="number001">0</text></text><br />
-            <text>Score: <text id="score001">0</text></text>
-            <hr />
-            <div id="disappear001">
-                <button class="buttons002" onclick="begin001()">Begin</button>
-            </div>
-            <p id="message001"></p>
-            <p id="message002"></p>
-            <p id="message003"></p>
-            <p id="message004"></p>
+    <div id="text001">
+        <h2>Quiz</h2>
+        Question: <text id="number001">0</text><br />
+        Score: <text id="score001">0</text>
+    <hr />
+            <div id="message001">Click Begin to start</div><br />
         </div>
+    <div id="text002">
+        <div id="question001"></div>
+        <div id="option001"></div>
+        <div id="option002"></div>
+        <div id="option003"></div>
+        <div id="option004"></div>
+        <div id="answer001"></div>
+        <div id="text001">
+            <div id="disappear001"><button class="buttons001" onclick="begin001()">Begin</button></div>
+        </div>
+        <div id="next001"></div>
     </div>
-</body>
-</html>
+    </div>
