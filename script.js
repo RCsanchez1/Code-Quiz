@@ -367,13 +367,11 @@ function repeat001() {
 }
 
 function countDown() {
-    var secs = 1800;
-    var mins;
+    var secs = 30;
     var element = document.getElementById('status');
 
     setInterval(function () {
-        mins = secs / 60;
-        element.innerHTML = "You have " + mins.toFixed(2) + " minutes";
+        element.innerHTML = "You have " + secs + " seconds";
         if (secs < 1) {
             element.innerHTML = '<h2>You have no time left!</h2>';
         }
