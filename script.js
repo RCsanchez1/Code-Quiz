@@ -352,6 +352,7 @@ function q10i() {
 }
 
 function end001() {
+     
     message001.innerHTML = "End of Quiz.";
     question001.innerHTML = "";
     option001.innerHTML = "";
@@ -374,6 +375,17 @@ function countDown() {
         element.innerHTML = "You have " + secs + " seconds";
         if (secs < 1) {
             element.innerHTML = '<h2>You have no time left!</h2>';
+        }
+        if (secs < 1) {
+            
+            message001.innerHTML = "End of Quiz.";
+            question001.innerHTML = "";
+            option001.innerHTML = "";
+            option002.innerHTML = "";
+            option003.innerHTML = "";
+            option004.innerHTML = "";
+            next001.innerHTML = "<div id=text001>" + "<button class=buttons001 onclick=repeat001()>Repeat</button>" + "</div>";
+            answer001.innerHTML = "";
         }
         secs--;
     }, 1000)} 
