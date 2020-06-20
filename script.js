@@ -369,7 +369,7 @@ function repeat001() {
 
 function countDown() {
     var secs = 30;
-    var element = document.getElementById('status');
+    var element = document.getElementById('timer');
 
     setInterval(function () {
         element.innerHTML = "You have " + secs + " seconds";
