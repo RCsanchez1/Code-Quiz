@@ -370,6 +370,9 @@ function repeat001() {
 function countDown() {
     var secs = 30;
     var element = document.getElementById('timer');
+    if (end001){
+        clearInterval(secs);  
+    }
 
     setInterval(function () {
         element.innerHTML = "You have " + secs + " seconds";
@@ -387,5 +390,54 @@ function countDown() {
             next001.innerHTML = "<div id=text001>" + "<button class=buttons001 onclick=repeat001()>Repeat</button>" + "</div>";
             answer001.innerHTML = "";
         }
+
+
         secs--;
     }, 1000)} 
+
+var initials = document.getElementById("initials")
+var messageBox = $("#message-box")
+var displayScore = $("#highScores")
+
+    var inputInitScore = []
+userInitials = initials.value.trim()
+
+var enterBtn = document.getElementById("enterInit")
+enterBtn.addEventListener("click", function() {
+    event.preventDefault()
+    if (initials.value === "") {
+        alert("Please enter your initials")
+    }
+    else {
+        var scoreObject = {
+            initials: initials.value,
+            score: score
+        }
+        inputInitScore = JSON.parse(localStorage.getItem("inputInitScore"))
+        if (!inputInitScore){
+            inputInitScore = []
+        }
+
+        inputInitScore.push(scoreObject)
+
+        localStorage.setItem("inputInitScore", JSON.stringify(inputInitScore))
+        displayHighScore()
+    }
+})
+
+function displayHighScore() {
+    displayScore.show()
+    var highScoreList = JSON.parse(localStorage.getItem("inputInitScore"))
+
+    for (i = 0; i < highScoreList.length; i++) {
+        let listing = document.createElement("li")
+
+        let scoreObject = highScoreList[i]
+        let htmlText = (scoreObject.initials) + "-" + (scoreObject.score)
+        console.log(htmlText)
+
+        listing.innerText = htmlText
+
+        document.getElementById("highscoreList").appendChild(listing)
+    }
+}
